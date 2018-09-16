@@ -1,16 +1,17 @@
 const express = require('express')
 const app = express();
 
-app.get('/', (req, res) => {
-    let result = {
-        nombre: 'jorge',
-        edad: 34,
-        url: req.url
-    };
+app.use(express.static(__dirname + '/public'));
 
-    res.send(result);
+// app.get('/', (req, res) => {
+//     let result = {
+//         nombre: 'jorge',
+//         edad: 34,
+//         url: req.url
+//     };
+//     res.send(result);
 
-});
+// });
 
 app.get('/data', (req, res) => {
     res.send('data');
@@ -18,4 +19,4 @@ app.get('/data', (req, res) => {
 
 app.listen(8080, () => {
     console.log('Escuchando en el puerto 8080');
-});
+});;
